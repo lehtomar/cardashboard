@@ -1,0 +1,14 @@
+{
+    "python.pythonPath": "/usr/local/bin/python3",
+    "files.exclude": {
+        "obj": true,
+        "bin": true
+    },
+    "azureFunctions.deploySubpath": ".",
+    "azureFunctions.scmDoBuildDuringDeployment": true,
+    "azureFunctions.pythonVenv": "vw-connect",
+    "azureFunctions.projectLanguage": "Python",
+    "azureFunctions.projectRuntime": "~2",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "func: extensions install"
+}
