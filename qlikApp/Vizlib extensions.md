@@ -1,0 +1,1 @@
+This app also makes use of Vizlib Simple KPI object. You can get it from https://vizlib.com.
