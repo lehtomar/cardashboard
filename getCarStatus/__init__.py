@@ -13,11 +13,7 @@ class WeConnection:
         # login to carnet
         vw._login()
 
-        if not vw.logged_in:
-            print('Could not login to carnet')
-            sys.exit(1)
-        else:
-            self.connection = vw
+        self.connection = vw
 
     def updateCars(self):
         self.connection.update()
@@ -38,7 +34,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     try:
         req_body = req.get_json()
     except ValueError:
-        print('ERROR')
         return func.HttpResponse(
              "Invalid request",
              status_code=400
@@ -50,6 +45,14 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     gte = WeConnection(username=name, password=pwd)
     gte.login()
+
+
+    if not gte.connection.logged_in:
+        return func.HttpResponse(
+             "Invalid request",
+             status_code=400
+        )
+    
     gte.updateCars()
 
 
