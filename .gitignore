@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.vscode/
+
 # C extensions
 *.so
 
@@ -130,4 +132,3 @@ local.settings.json
 .python_packages
 vw-connect
 
-.vscode
